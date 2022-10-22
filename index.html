@@ -10,32 +10,38 @@
             href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
             rel="stylesheet"
         />
-        <!-- Css global -->
+        <!-- Link css -->
         <link rel="stylesheet" href="./front-end/assets/css/global.css" />
+        <link rel="stylesheet" href="./front-end/assets/css/sidebar.css" />
+        <link rel="stylesheet" href="./front-end/assets/css/navbar.css" />
+        <link
+            rel="stylesheet"
+            href="./front-end/assets/css/headerContent.css"
+        />
         <link rel="stylesheet" href="./front-end/assets/css/categories.css" />
     </head>
     <body>
         <!-- Sidebar -->
-        <section class="sidebar">
+        <section id="sidebar" class="sidebar">
             <a href="#" class="logo">
                 <i class="bx bxs-smile"></i>
-                <span class="logo-txt">AdminHub</span>
+                <span class="logo-txt">AdminOnOff</span>
             </a>
 
             <ul class="side-menu top">
-                <li class="side-item active">
-                    <a>
+                <li class="side-item not-select active">
+                    <a href="./index.html">
                         <i class="bx bx-list-ul"></i>
                         <span>Category</span>
                     </a>
                 </li>
-                <li class="side-item">
-                    <a>
-                        <i class="bx bxs-dashboard"></i>
-                        <span>Dashboard</span>
+                <li class="side-item not-select">
+                    <a href="./front-end/pages/addProduct.html">
+                        <i class="bx bxs-add-to-queue"></i>
+                        <span>Add product</span>
                     </a>
                 </li>
-                <li class="side-item">
+                <li class="side-item not-select">
                     <a>
                         <i class="bx bxs-dashboard"></i>
                         <span>Dashboard</span>
@@ -43,10 +49,9 @@
                 </li>
             </ul>
         </section>
-
         <section class="content">
             <!-- Navbar -->
-            <nav>
+            <nav id="navbar">
                 <form action="#">
                     <div class="form-input">
                         <input
@@ -67,7 +72,7 @@
                     <div class="avatar">
                         <img
                             src="https://tranphuctien.github.io/adminPage/img/people.png"
-                            alt=""
+                            alt="avatar"
                         />
                     </div>
                 </div>
@@ -82,135 +87,56 @@
                             <li><a href="#" class="active">Home</a></li>
                         </ul>
                     </div>
-                    <a href="#" class="add-product">
-                        <div class="add-product-icon"><i class='bx bx-add-to-queue'></i></div>
+                    <a
+                        href="./front-end/pages/addProduct.html"
+                        class="add-product active not-select"
+                        id="add-product"
+                    >
+                        <div class="add-product-icon">
+                            <i class="bx bx-add-to-queue"></i>
+                        </div>
                         Add new product
                     </a>
                 </div>
 
-                <div class="table-data">
-                    <div class="head">
-                        <h3>Products</h3>
-                        <div class="table-actions">
-                            <i class="bx bx-search"></i>
-                            <i class='bx bx-filter-alt' ></i>
+                <!-- --------------------------- INNER --------------------------- -->
+                <div id="inner" class="inner">
+                    <div class="table-data">
+                        <div class="head">
+                            <h3>Products</h3>
+                            <div class="table-actions">
+                                <i class="bx bx-search"></i>
+                                <i class="bx bx-filter-alt"></i>
+                            </div>
+                        </div>
+                        <div style="overflow-x: auto">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Color/Type</th>
+                                        <th>Quantity</th>
+                                        <th>Category</th>
+                                        <th>Size</th>
+                                        <th>Material</th>
+                                        <th>Edit</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                    <!-- categories.js inner row here -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Color</th>
-                                <th>Quantity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    />
-                                </td>
-                                <td class="td-name">
-                                    Raiden Shogun Genshin Impact
-                                </td>
-                                <td>100.000</td>
-                                <td class="td-color">
-                                    <img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    /><img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    /><img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    />
-                                </td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    />
-                                </td>
-                                <td class="td-name">
-                                    Raiden Shogun Genshin Impact
-                                </td>
-                                <td>100.000</td>
-                                <td class="td-color">
-                                    <img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    /><img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    /><img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    />
-                                </td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    />
-                                </td>
-                                <td class="td-name">
-                                    Raiden Shogun Genshin Impact
-                                </td>
-                                <td>100.000</td>
-                                <td class="td-color">
-                                    <img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    /><img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    /><img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    />
-                                </td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    />
-                                </td>
-                                <td class="td-name">
-                                    Raiden Shogun Genshin Impact
-                                </td>
-                                <td>100.000</td>
-                                <td class="td-color">
-                                    <img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    /><img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    /><img
-                                        src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"
-                                        alt=""
-                                    />
-                                </td>
-                                <td>1</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </main>
         </section>
+
+        <script src="./front-end/assets/scripts/constant.js"></script>
+        <script src="./front-end/assets/scripts/sidebar.js"></script>
+        <script src="./front-end/assets/scripts/categories.js"></script>
     </body>
 </html>

@@ -1,0 +1,33 @@
+.head-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+.head-title h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+}
+
+.breadcrumb li {
+    color: var(--dark);
+}
+
+.breadcrumb li a {
+    color: var(--dark-grey);
+    pointer-events: none;
+}
+
+.breadcrumb li a.active {
+    color: var(--blue);
+    pointer-events: unset;
+}

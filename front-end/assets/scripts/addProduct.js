@@ -10,7 +10,7 @@ const categoryList = document.querySelector('#category');
 const categoryCurrent = document.querySelector('#current-value-category');
 const materialList = document.querySelector('#material');
 const materialCurrent = document.querySelector('#current-value-material');
-const buttonSubmit = document.querySelector('#button-submit')
+const buttonSubmit = document.querySelector('#button-submit');
 
 const addProduct = {
     products: JSON.parse(localStorage.getItem('products')) || [],
@@ -84,8 +84,14 @@ const addProduct = {
 
         if (!id) return;
 
-        buttonSubmit.innerText = 'Save'
         let index = this.products.findIndex((item) => item.id === id);
+
+        if (index < 0) {
+            alert('Không có sản phẩm này');
+            goCategory();
+        }
+
+        buttonSubmit.innerText = 'Save';
         const product = this.products[index];
 
         nameProduct.value = product.name;
@@ -93,15 +99,30 @@ const addProduct = {
         sizeProduct.value = product.size;
         priceProduct.value = product.price;
         description.value = product.description;
-        this.changeOption(categoryCurrent, CATEGORY_OPTION, product.category, 'category');
-        this.changeOption(genderCurrent, GENDER_OPTION, product.gender, 'gender');
-        this.changeOption(materialCurrent, MATERIAL_OPTION, product.material, 'material');
+        this.changeOption(
+            categoryCurrent,
+            CATEGORY_OPTION,
+            product.category,
+            'category',
+        );
+        this.changeOption(
+            genderCurrent,
+            GENDER_OPTION,
+            product.gender,
+            'gender',
+        );
+        this.changeOption(
+            materialCurrent,
+            MATERIAL_OPTION,
+            product.material,
+            'material',
+        );
     },
 
     changeOption(current, option, value, key) {
         current.setAttribute('value', value);
         current.innerHTML = option[value];
-        this.product[key] = value
+        this.product[key] = value;
     },
 
     start() {

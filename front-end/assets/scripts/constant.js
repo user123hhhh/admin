@@ -1,7 +1,13 @@
 // Sidebar
 const sidebarItems = document.querySelectorAll('#sidebar ul li a');
+
+// Global function
 const setItemLocalStorage = (name, value) => {
     localStorage.setItem(name, JSON.stringify(value));
+};
+
+const goCategory = () => {
+    window.location = `${window.location.origin}/index.html`;
 };
 
 // Category

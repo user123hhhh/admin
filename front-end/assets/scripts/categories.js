@@ -6,14 +6,17 @@ const category = {
     handleEvent() {},
     renderCategory() {
         if (this.products.length <= 0) {
-            tbody.innerHTML = "Khong co san pham nao";
+            tbody.innerHTML = 'Khong co san pham nao';
             return;
         }
 
         let row = ``;
 
         this.products.forEach((product, i) => {
-            price = product.price.replace(/(\d{3})(\d+)/g, '$1.$2')
+            let price = product.price
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
             row += `
                 <tr>
                     <td>
@@ -23,9 +26,9 @@ const category = {
                         />
                     </td>
                     <td class="td-name">
-                        <a class="table-name-link" href="./front-end/pages/addProduct.html?id=${product.id}">${
-                product.name
-            }</a>
+                        <a class="table-name-link" href="./front-end/pages/addProduct.html?id=${
+                            product.id
+                        }">${product.name}</a>
                     </td>
                     <td>${price}</td>
                     <td class="td-color">
@@ -44,8 +47,12 @@ const category = {
                     <td>${CATEGORY_OPTION[product.category]}</td>
                     <td>${product.size}</td>
                     <td>${MATERIAL_OPTION[product.material]}</td>
-                    <td id="edit" class="actions-icon"><a href="./front-end/pages/addProduct.html?id=${product.id}"><i class='bx bxs-message-square-edit'></i></a></td>
-                    <td onclick="category.removeItem(${product.id})" id="remove" class="actions-icon"><i class='bx bxs-message-square-x'></i></td>
+                    <td id="edit" class="actions-icon"><a href="./front-end/pages/addProduct.html?id=${
+                        product.id
+                    }"><i class='bx bxs-message-square-edit'></i></a></td>
+                    <td onclick="category.removeItem(${
+                        product.id
+                    })" id="remove" class="actions-icon"><i class='bx bxs-message-square-x'></i></td>
                 </tr>`;
 
             tbody.innerHTML = row;

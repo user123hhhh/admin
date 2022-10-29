@@ -30,13 +30,9 @@ Validator({
             setItemLocalStorage('products', addProduct.products);
             goCategory();
         } else {
-            setItemLocalStorage('products', addProduct.products);
             addProduct.products.unshift(productInfo);
+            setItemLocalStorage('products', addProduct.products);
             goCategory();
         }
     },
 });
-
-const goCategory = () => {
-    window.location = `${window.location.origin}/index.html`;
-};

@@ -18,9 +18,9 @@ const addProduct = {
         id: new Date().getTime(),
         image: 'https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.webp',
         imageColor: [],
-        category: Object.values(CATEGORY_OPTION)[0] || null,
-        gender: Object.values(GENDER_OPTION)[0] || null,
-        material: Object.values(MATERIAL_OPTION)[0] || null,
+        category: Object.keys(CATEGORY_OPTION)[0] || null,
+        gender: Object.keys(GENDER_OPTION)[0] || null,
+        material: Object.keys(MATERIAL_OPTION)[0] || null,
     },
 
     handleEvent() {

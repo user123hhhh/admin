@@ -30,7 +30,7 @@ const category = {
                             product.id
                         }">${product.name}</a>
                     </td>
-                    <td>${price}</td>
+                    <td>${price}đ</td>
                     <td class="td-color">
                         <img
                             src="https://i.pinimg.com/236x/ea/dc/39/eadc39909b3177de6a9d10f76cc90461.jpg"

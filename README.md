@@ -1,1 +1,1 @@
-https://admin-delta-drab.vercel.app/front-end/pages/addProduct.html
+Web: https://admin-delta-drab.vercel.app/front-end/pages/addProduct.html
